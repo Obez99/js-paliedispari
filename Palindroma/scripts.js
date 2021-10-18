@@ -21,6 +21,10 @@ for (let i = word.length - 1; i >= 0; i--) {
 
 //Convertire l'array in una stringa
 reverseWord = reverseWord.join("");
-console.log(reverseWord);
 
 //Confrontare la stringa finale e confrontarla con quella inserita dall'utente
+if (reverseWord.toLowerCase() === word.toLowerCase()) {
+  alert("La parola è palindroma")
+} else {
+  alert("La parola non è palindroma")
+}
