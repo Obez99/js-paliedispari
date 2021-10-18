@@ -1,4 +1,4 @@
-function palindromeCheck() {
+function palindromeCheck(word) {
   //Scomporre la parola in un array lettera per lettera
   let letters = [];
   for (let i = 0; i < word.length; i++) {
@@ -25,11 +25,11 @@ function palindromeCheck() {
 }
 
 //Chiedere all'utente di inserire una parola e controllare che lo sia
-const word = prompt("Inserisci una parola");
-if (!isNaN(word)) {
+const userInput = prompt("Inserisci una parola");
+if (!isNaN(userInput)) {
   alert("Inserisci una parola valida!")
   location.reload();
 }
 
-palindromeCheck(word)
+palindromeCheck(userInput);
 
