@@ -17,14 +17,23 @@ function palindromeCheck(word) {
   reverseWord = reverseWord.join("");
 
   //Confrontare la stringa finale e confrontarla con quella inserita dall'utente
+
+  let resultText = document.createElement("div")
   if (reverseWord.toLowerCase() === word.toLowerCase()) {
-    return alert("La parola è palindroma");
+
+    resultText.innerHTML += "La parola è palindroma"
+    resultText.classList.add("text-success")
+    return formContainer.innerHTML += resultText.outerHTML;
   } else {
-    return alert("La parola non è palindroma");
+
+    resultText.innerHTML += "La parola non è palindroma"
+    resultText.classList.add("text-danger")
+    return formContainer.innerHTML += resultText.outerHTML;
   }
 }
 
 //Chiedere all'utente di inserire una parola e controllare che lo sia
+const formContainer = document.querySelector(".form_container")
 const textbox = document.querySelector(".form_container input");
 const button = document.querySelector(".form_container .btn-primary");
 button.addEventListener("click", function () {
