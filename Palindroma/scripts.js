@@ -20,26 +20,24 @@ function palindromeCheck(word) {
 
   let resultText = document.createElement("div")
   if (reverseWord.toLowerCase() === word.toLowerCase()) {
-
     resultText.innerHTML += "La parola è palindroma"
     resultText.classList.add("text-success")
-    return formContainer.innerHTML += resultText.outerHTML;
   } else {
-
     resultText.innerHTML += "La parola non è palindroma"
     resultText.classList.add("text-danger")
-    return formContainer.innerHTML += resultText.outerHTML;
   }
+
+  return formContainer.innerHTML += resultText.outerHTML;
+
 }
 
 //Chiedere all'utente di inserire una parola e controllare che lo sia
-const formContainer = document.querySelector(".form_container")
+const formContainer = document.querySelector("form")
 const textbox = document.querySelector(".form_container input");
 const button = document.querySelector(".form_container .btn-primary");
 button.addEventListener("click", function () {
-  const userInput = textbox.value;
+  let userInput = textbox.value;
   palindromeCheck(userInput);
-
 })
 
 
