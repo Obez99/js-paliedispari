@@ -1,8 +1,12 @@
-//Chiedere all'utente di inserire una parola
+//Chiedere all'utente di inserire una parola e controllare che lo sia
 const word = prompt("Inserisci una parola");
-let letters = [];
+if (!isNaN(word)) {
+  alert("Inserisci una parola valida!")
+  location.reload();
+}
 
 //Scomporre la parola in un array lettera per lettera
+let letters = [];
 for (let i = 0; i < word.length; i++) {
   letters[i] = word[i];
 }
@@ -18,4 +22,5 @@ for (let i = word.length - 1; i >= 0; i--) {
 //Convertire l'array in una stringa
 reverseWord = reverseWord.join("");
 console.log(reverseWord);
+
 //Confrontare la stringa finale e confrontarla con quella inserita dall'utente
