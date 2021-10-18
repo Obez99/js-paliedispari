@@ -1,14 +1,9 @@
-//Generare un numero random da 1 a 5 per il computer con una funzione
-function aiRandomNumber() {
-  const randomNumber = Math.floor(Math.random() * 5) + 1;
-  return randomNumber;
-}
 
 //Far scegliere all'utente pari o dispari
 let userNumber = 0;
 let userEvenOdd = prompt("Pari o dispari?");
 userEvenOdd = userEvenOdd.toLowerCase();
-console.log(userEvenOdd);
+const userResult = evenCheck(userEvenOdd);
 if (!isNaN || userEvenOdd != "pari" && userEvenOdd != "dispari") {
   alert("Inserisci un valore corretto");
   location.reload();
@@ -24,10 +19,20 @@ else {
 
 //Generare un numero random da 1 a 5 per il computer con una funzione
 const aiNumber = aiRandomNumber();
-console.log(aiNumber);
+alert(`Il computer ha scelto il numero ${aiNumber}`)
 
 //Sommare i numeri del computer e del giocatore
 const sum = userNumber + aiNumber;
-console.log(sum);
+alert(`La somma dei numeri è di ${sum}`)
+
 //Stabilire se la somma dei due numeri è pari o dispari con un funzione
+const result = evenCheck(sum);
+
+
 //Dichiarare il vincitore
+if (userResult === result) {
+  alert("Complimenti, hai vinto!")
+}
+else {
+  alert("Mi dispiace, hai perso.")
+}
