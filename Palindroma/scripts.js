@@ -25,12 +25,13 @@ function palindromeCheck(word) {
 }
 
 //Chiedere all'utente di inserire una parola e controllare che lo sia
-const userInput = prompt("Inserisci una parola");
-if (!isNaN(userInput)) {
-  alert("Inserisci una parola valida!")
-  location.reload();
-}
+const textbox = document.querySelector(".form_container input");
+const button = document.querySelector(".form_container .btn-primary");
+button.addEventListener("click", function () {
+  const userInput = textbox.value;
+  palindromeCheck(userInput);
 
-palindromeCheck(userInput);
+})
+
 
 
